@@ -1,0 +1,399 @@
+/* =========================================
+   1.  VARIABLES & RESET
+   (টেলিগ্রামের কালার কোড)
+========================================= */
+:root {
+    --bg-color: #17212b;         /* মেইন ব্যাকগ্রাউন্ড */
+    --card-bg: #242f3d;          /* কার্ডের ব্যাকগ্রাউন্ড */
+    --text-primary: #ffffff;     /* প্রধান টেক্সট */
+    --text-secondary: #7f8c9d;   /* হালকা টেক্সট */
+    --primary-color: #5288c1;    /* টেলিগ্রাম ব্লু */
+    --primary-hover: #4674a6;
+    --danger-color: #e53935;     /* লাল রং (Logout) */
+    --success-color: #4caf50;    /* সবুজ রং */
+    --border-radius: 12px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ইউটিলিটি ক্লাস (লুকানোর জন্য) */
+.hidden {
+    display: none !important;
+}
+
+/* =========================================
+   2. LOGIN VIEW STYLES
+========================================= */
+.center-screen {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+}
+
+.login-card {
+    background-color: var(--card-bg);
+    padding: 40px 30px;
+    border-radius: 20px;
+    text-align: center;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.login-icon {
+    font-size: 50px;
+    color: #f5c518; /* Gold Color for Star */
+    margin-bottom: 20px;
+}
+
+.login-card h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 30px;
+}
+
+/* Features Grid (আইকনগুলো) */
+.features-grid {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    background: rgba(0,0,0,0.2);
+    padding: 15px;
+    border-radius: var(--border-radius);
+}
+
+.feature-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.feature-item i {
+    font-size: 18px;
+    margin-bottom: 5px;
+    color: var(--primary-color);
+}
+
+/* Telegram Button Container */
+.telegram-login-container {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+/* =========================================
+   3. DASHBOARD STYLES
+========================================= */
+.app-header {
+    background-color: var(--card-bg);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+}
+
+.profile-area {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+#user-photo {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid var(--primary-color);
+}
+
+.profile-text h2 {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.profile-text span {
+    font-size: 12px;
+    color: var(--text-secondary);
+}
+
+.icon-btn {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.icon-btn:hover {
+    color: var(--danger-color);
+}
+
+.main-content {
+    padding: 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Balance Card */
+.balance-card {
+    background: linear-gradient(135deg, #2b5876 0%, #4e4376 100%);
+    padding: 25px;
+    border-radius: 20px;
+    margin-bottom: 25px;
+    color: white;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+.badge {
+    background: rgba(255,255,255,0.2);
+    padding: 2px 8px;
+    border-radius: 10px;
+    font-size: 11px;
+}
+
+.balance-amount {
+    font-size: 40px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.star-gold {
+    color: #ffd700;
+    font-size: 32px;
+}
+
+.balance-footer {
+    background: rgba(0,0,0,0.2);
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+}
+
+.highlight-text {
+    font-weight: bold;
+    color: #4cd964;
+}
+
+/* History List */
+.section-title {
+    font-size: 18px;
+    margin-bottom: 15px;
+    padding-left: 5px;
+    border-left: 4px solid var(--primary-color);
+}
+
+.list-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    padding-bottom: 50px;
+}
+
+.history-card {
+    background-color: var(--card-bg);
+    padding: 15px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.row-top, .row-mid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.batch-id {
+    font-size: 12px;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.star-pill {
+    background: rgba(255, 215, 0, 0.1);
+    color: #ffd700;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.date, .unlock-time {
+    font-size: 13px;
+    color: var(--text-secondary);
+}
+
+/* Buttons */
+.btn-action {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 5px;
+    transition: 0.2s;
+}
+
+/* Active Button (Withdraw Ready) */
+.btn-action.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.btn-action.active:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Disabled Button (Locked) */
+.btn-action.disabled {
+    background-color: rgba(255,255,255,0.1);
+    color: var(--text-secondary);
+    cursor: not-allowed;
+}
+
+.btn-action.paid {
+    background-color: transparent;
+    color: var(--success-color);
+    border: 1px solid var(--success-color);
+    cursor: default;
+}
+
+/* =========================================
+   4. MODAL STYLES (POPUP)
+========================================= */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(5px);
+}
+
+.modal-box {
+    background: var(--card-bg);
+    width: 90%;
+    max-width: 400px;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+    animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+.modal-header {
+    background: rgba(0,0,0,0.2);
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.close-modal {
+    background: none;
+    border: none;
+    color: var(--text-secondary);
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.modal-body {
+    padding: 20px;
+}
+
+.modal-info {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 15px;
+}
+
+/* Form Styles */
+input[type="text"] {
+    width: 100%;
+    padding: 12px;
+    background: var(--bg-color);
+    border: 1px solid #3d4a59;
+    border-radius: 8px;
+    color: white;
+    margin-top: 5px;
+    outline: none;
+}
+
+input[type="text"]:focus {
+    border-color: var(--primary-color);
+}
+
+.btn-primary-full {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px;
+    border-radius: 8px;
+    font-weight: 600;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.input-hint {
+    font-size: 11px;
+    color: var(--text-secondary);
+    margin-top: 5px;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 40px 0;
+    color: var(--text-secondary);
+}
